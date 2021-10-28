@@ -3,7 +3,7 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "resourceBaseName": {
-      "value": "junhan1028deveaf252"
+      "value": "junhan1028dev7781cc"
     },
     "m365ClientId": {
       "value": "{{state.fx-resource-aad-app-for-teams.clientId}}"
@@ -16,6 +16,18 @@
     },
     "m365OauthAuthorityHost": {
       "value": "{{state.fx-resource-aad-app-for-teams.oauthHost}}"
+    },
+    "apimClientId": {
+      "value": "{{state.fx-resource-apim.apimClientAADClientId}}"
+    },
+    "apimClientSecret": {
+      "value": "{{state.fx-resource-apim.apimClientAADClientSecret}}"
+    },
+    "apimPublisherEmail": {
+      "value": "{{state.fx-resource-apim.publisherEmail}}"
+    },
+    "apimPublisherName": {
+      "value": "{{state.fx-resource-apim.publisherName}}"
     }
   }
 }

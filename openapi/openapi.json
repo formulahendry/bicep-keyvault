@@ -1,0 +1,8 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "junhan1028testForKeyVault2",
+        "version": "v1"
+    },
+    "paths": {}
+}

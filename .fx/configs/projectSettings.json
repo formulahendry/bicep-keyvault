@@ -5,19 +5,25 @@
         "name": "fx-solution-azure",
         "version": "1.0.0",
         "hostType": "Azure",
-        "azureResources": [],
+        "azureResources": [
+            "function",
+            "apim"
+        ],
         "capabilities": [
             "Tab"
         ],
         "activeResourcePlugins": [
             "fx-resource-frontend-hosting",
             "fx-resource-aad-app-for-teams",
+            "fx-resource-function",
             "fx-resource-local-debug",
+            "fx-resource-apim",
             "fx-resource-appstudio",
             "fx-resource-simple-auth"
         ]
     },
     "version": "1.0.0",
     "isFromSample": false,
-    "programmingLanguage": "javascript"
+    "programmingLanguage": "javascript",
+    "defaultFunctionName": "getUserProfile"
 }

@@ -26,10 +26,22 @@
         "tenantId": "81133585-149c-463c-ac0b-70da965a20e1",
         "oauthHost": "https://login.microsoftonline.com",
         "oauthAuthority": "https://login.microsoftonline.com/81133585-149c-463c-ac0b-70da965a20e1",
-        "applicationIdUris": "api://frontendstgudyoafdlbaht2.z19.web.core.windows.net/a7e56bc9-1a7d-452b-81e3-1fe316e9052d"
+        "applicationIdUris": "api://frontendstgch4bgjjlgd3ea.z19.web.core.windows.net/a7e56bc9-1a7d-452b-81e3-1fe316e9052d"
     },
     "fx-resource-simple-auth": {
-        "endpoint": "https://junhan1028deveaf252-simpleauth-webapp.azurewebsites.net",
+        "endpoint": "https://junhan1028dev7781cc-simpleauth-webapp.azurewebsites.net",
         "skuName": "F1"
+    },
+    "fx-resource-function": {
+        "functionEndpoint": "https://junhan1028dev7781cc-function-webapp.azurewebsites.net",
+        "functionAppId": "/subscriptions/1756abc0-3554-4341-8d6a-46674962ea19/resourceGroups/junhan1028testForKeyVault2-dev-rg/providers/Microsoft.Web/sites/junhan1028dev7781cc-function-webapp"
+    },
+    "fx-resource-apim": {
+        "apimClientAADObjectId": "8bed023f-b0b1-4c78-b2b0-94f1e129098f",
+        "apimClientAADClientId": "cd501b9f-e4bb-42e6-ba58-616b9b10ec52",
+        "apimClientAADClientSecret": "{{fx-resource-apim.apimClientAADClientSecret}}",
+        "serviceResourceId": "/subscriptions/1756abc0-3554-4341-8d6a-46674962ea19/resourceGroups/junhan1028testForKeyVault2-dev-rg/providers/Microsoft.ApiManagement/service/junhan1028dev7781cc-apim-service",
+        "productResourceId": "/subscriptions/1756abc0-3554-4341-8d6a-46674962ea19/resourceGroups/junhan1028testForKeyVault2-dev-rg/providers/Microsoft.ApiManagement/service/junhan1028dev7781cc-apim-service/products/junhan1028dev7781cc-apim-product",
+        "authServerResourceId": "/subscriptions/1756abc0-3554-4341-8d6a-46674962ea19/resourceGroups/junhan1028testForKeyVault2-dev-rg/providers/Microsoft.ApiManagement/service/junhan1028dev7781cc-apim-service/authorizationServers/junhan1028dev7781cc-apim-oauthserver"
     }
 }

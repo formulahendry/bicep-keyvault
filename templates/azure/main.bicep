@@ -23,6 +23,25 @@ param simpleAuth_packageUri string = 'https://github.com/OfficeDev/TeamsFx/relea
 
 var m365ApplicationIdUri = 'api://${frontendHostingProvision.outputs.domain}/${m365ClientId}'
 
+
+param managedIdentityName string = '${resourceBaseName}-msi'
+param keyVaultName string = 'junhan1103keyvault'
+
+resource managedIdentity 'Microsoft.ManagedIdentity/userAssignedIdentities@2018-11-30' = {
+  name: managedIdentityName
+  location: resourceGroup().location
+}
+
+module keyVaultProvision './modules/keyVaultProvision.bicep' = {
+  name: 'keyVaultProvision'
+  params: {
+    keyVaultName: keyVaultName
+    msiTenantId: managedIdentity.properties.tenantId
+    msiObjectId: managedIdentity.properties.principalId
+    m365ClientSecret: m365ClientSecret
+  }
+}
+
 module frontendHostingProvision './modules/frontendHostingProvision.bicep' = {
   name: 'frontendHostingProvision'
   params: {
@@ -35,6 +54,7 @@ module functionProvision './modules/functionProvision.bicep' = {
     functionAppName: function_webappName
     functionServerfarmsName: function_serverfarmsName
     functionStorageName: function_storageName
+    identityId: managedIdentity.id
   }
 }
 module functionConfiguration './modules/functionConfiguration.bicep' = {
@@ -46,11 +66,12 @@ module functionConfiguration './modules/functionConfiguration.bicep' = {
     functionAppName: function_webappName
     functionStorageName: function_storageName
     m365ClientId: m365ClientId
-    m365ClientSecret: m365ClientSecret
+    m365ClientSecret: keyVaultProvision.outputs.m365ClientSecretReference
     m365TenantId: m365TenantId
     m365ApplicationIdUri: m365ApplicationIdUri
     m365OauthAuthorityHost: m365OauthAuthorityHost
     frontendHostingStorageEndpoint: frontendHostingProvision.outputs.endpoint
+    identityId: managedIdentity.id
   }
 }
 module apimProvision './modules/apimProvision.bicep' = {

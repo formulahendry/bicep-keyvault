@@ -18,7 +18,7 @@ resource functionApp 'Microsoft.Web/sites@2021-01-15' = {
   location: resourceGroup().location
   properties: {
     serverFarmId: functionServerfarms.id
-
+    keyVaultReferenceIdentity: identityId
   }
   identity: {
     type: 'UserAssigned'

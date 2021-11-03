@@ -35,7 +35,6 @@ resource functionAppConfig 'Microsoft.Web/sites/config@2021-01-15' = {
         frontendHostingStorageEndpoint
       ]
     }
-    keyVaultReferenceIdentity: identityId
   }
 }
 

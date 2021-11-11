@@ -25,7 +25,7 @@ var m365ApplicationIdUri = 'api://${frontendHostingProvision.outputs.domain}/${m
 
 
 param managedIdentityName string = '${resourceBaseName}-msi'
-param keyVaultName string = 'junhan1103keyvault'
+param keyVaultName string = '${resourceBaseName}-kv'
 
 resource managedIdentity 'Microsoft.ManagedIdentity/userAssignedIdentities@2018-11-30' = {
   name: managedIdentityName
